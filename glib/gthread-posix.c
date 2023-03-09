@@ -75,7 +75,8 @@
 #endif
 
 #if (defined(HAVE_FUTEX) || defined(HAVE_FUTEX_TIME64)) && \
-    (defined(HAVE_STDATOMIC_H) || defined(__ATOMIC_SEQ_CST))
+    (defined(HAVE_STDATOMIC_H) || defined(__ATOMIC_SEQ_CST)) && \
+    !defined(__ANDROID__)
 #define USE_NATIVE_MUTEX
 #endif
 
